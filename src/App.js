@@ -1,13 +1,14 @@
-import logo from './/clipart-md.png';
-import './App.css';
-import getMovies from './utils/getMovies';
-import { useState, useEffect } from 'react';
-import MovieDescription from './MovieDescription';
+import logo from ".//clipart-md.png";
+import "./App.css";
+import getMovies from "./utils/getMovies";
+import { useState, useEffect } from "react";
+import MovieDescription from "./MovieDescription";
+import UserRating from "./UserRating";
 
 function App() {
-  useEffect(()=>{
+  useEffect(() => {
     getMovies(setMovies);
-  }, [])
+  }, []);
 
   const [movies, setMovies] = useState();
 
@@ -15,17 +16,25 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Welcome To Friends' Tomatoes
-        </p>
+        <p>Welcome To Friends' Tomatoes</p>
         <div style={style}>
-        {movies && movies.results.map((data) => <MovieDescription filePath = {data.poster_path} key={data.title} movie={data}/>)
-      }</div>
+          {movies &&
+            movies.results.map((data) => (
+              <MovieDescription
+                filePath={data.poster_path}
+                key={data.title}
+                movie={data}
+              />
+            ))}
+          <UserRating name="half-rating" defaultValue={2.5} precision={0.5} />
+        </div>
       </header>
     </div>
   );
 }
-const style= {
-  flexDirection: 'row'
-}
+
+const style = {
+  flexDirection: "row",
+};
+
 export default App;
