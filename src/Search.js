@@ -13,7 +13,7 @@ export default function Search() {
 
   const api = `https://api.themoviedb.org/3/search/multi?api_key=${key}&language=en-US&quert=${query}&page=1&include_adult=true`;
 
-  const searchMulti = () => {
+  const searchMovies = () => {
     fetch(api)
       .then((response) => response.json())
       .then((data) => console.log(data));
@@ -26,7 +26,7 @@ export default function Search() {
           name="mySearch"
           placeholder="movie, tv, actor, etc..."
         />
-        <button onChange={handleChange} onClick={searchMulti}>
+        <button onChange={handleChange} onClick={searchMovies}>
           Search
         </button>
       </label>
