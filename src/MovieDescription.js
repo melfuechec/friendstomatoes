@@ -12,7 +12,7 @@ export default function MovieDescription({ filePath, movie }) {
     <div style={style}>
       <p style={titleStyle}>{movie.title}</p>
       <img alt="movie poster" src={imgURL} style={imgStyle}></img>
-      <p style={descriptionStyle}>{movie.overview.substring(0, 150)}...</p>
+      <p style={descriptionStyle}>{movie.overview.substring(0, 200)}...</p>
       <UserRating name="half-rating" defaultValue={2.5} precision={0.5} />
     </div>
   );
@@ -20,10 +20,10 @@ export default function MovieDescription({ filePath, movie }) {
 const style = {
   border: "1px solid black",
   height: "400px",
-  marginTop: "40px",
+  marginTop: "30px",
   width: "400px",
   float: "left",
-  backgroundColor: "white",
+  backgroundColor: "gray",
   marginLeft: "32px",
   borderRadius: "10px",
 };

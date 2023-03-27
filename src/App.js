@@ -4,6 +4,7 @@ import getMovies from "./utils/getMovies";
 import Search from "./Search";
 import { useState, useEffect } from "react";
 import MovieDescription from "./MovieDescription";
+import searchMulti from "./utils/searchMulti";
 
 function App() {
   useEffect(() => {
