@@ -7,7 +7,7 @@ function UserRating() {
 
   return (
     <div>
-      <Typography component="legend">TomatoMeter</Typography>
+      <Typography component="legend"></Typography>
       <Rating
         name="simple-controlled"
         value={value}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import getMovieImg from "./utils/getMovieImg";
+import UserRating from "./UserRating";
 
 export default function MovieDescription({ filePath, movie }) {
   const [imgURL, setimgURL] = useState("");
@@ -11,17 +12,18 @@ export default function MovieDescription({ filePath, movie }) {
     <div style={style}>
       <p style={titleStyle}>{movie.title}</p>
       <img alt="movie poster" src={imgURL} style={imgStyle}></img>
-      <p style={descriptionStyle}>{movie.overview.substring(0, 75)}...</p>
+      <p style={descriptionStyle}>{movie.overview.substring(0, 200)}...</p>
+      <UserRating name="half-rating" defaultValue={2.5} precision={0.5} />
     </div>
   );
 }
 const style = {
   border: "1px solid black",
-  height: "300px",
-  marginTop: "180px",
-  width: "180px",
+  height: "400px",
+  marginTop: "30px",
+  width: "400px",
   float: "left",
-  backgroundColor: "white",
+  backgroundColor: "gray",
   marginLeft: "32px",
   borderRadius: "10px",
 };

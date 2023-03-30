@@ -1,9 +1,9 @@
 import logo from ".//clipart-md.png";
 import "./App.css";
 import getMovies from "./utils/getMovies";
+import Search from "./Search";
 import { useState, useEffect } from "react";
 import MovieDescription from "./MovieDescription";
-import UserRating from "./UserRating";
 
 function App() {
   useEffect(() => {
@@ -17,6 +17,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Welcome To Friends' Tomatoes</p>
+        <Search></Search>
         <div style={style}>
           {movies &&
             movies.results.map((data) => (
@@ -26,7 +27,6 @@ function App() {
                 movie={data}
               />
             ))}
-          <UserRating name="half-rating" defaultValue={2.5} precision={0.5} />
         </div>
       </header>
     </div>
